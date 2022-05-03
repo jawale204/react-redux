@@ -9,7 +9,7 @@ const initialState = {
   ],
 };
 
-const ProductReducers = (state = initialState, { type, action }) => {
+const ProductReducers = (state = initialState, { type, payload }) => {
   switch (type) {
     case ProductActionTypes.SET_PRODUCTS:
       return state;
