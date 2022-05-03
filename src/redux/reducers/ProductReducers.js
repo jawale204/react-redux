@@ -3,7 +3,7 @@ const initialState = {
   products: [],
 };
 
-const ProductReducers = (state = initialState, { type, payload }) => {
+export const ProductsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ProductActionTypes.SET_PRODUCTS:
       return { ...state, products: payload };
@@ -12,4 +12,13 @@ const ProductReducers = (state = initialState, { type, payload }) => {
   }
 };
 
-export default ProductReducers;
+export const ProductReducer = (state = {}, { type, payload }) => {
+  switch (type) {
+    case ProductActionTypes.SELECTED_PRODUCT:
+      return { ...payload };
+    case ProductActionTypes.REMOVE_SELECTED_PRODUCT:
+      return {};
+    default:
+      return state;
+  }
+};
